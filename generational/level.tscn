@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cseq8smn0sld7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ak315"]
+height = 3.825
+
+[sub_resource type="SphereMesh" id="SphereMesh_ak315"]
+radius = 1.0
+height = 2.0
+
+[node name="Node3D" type="Node3D" unique_id=875277845]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1499070836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1498954, 0)
+mesh = SubResource("CapsuleMesh_ak315")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=80101942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.794856, -0.8668188, 0)
+mesh = SubResource("SphereMesh_ak315")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=410864589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7846443, -0.8611309, 0)
+mesh = SubResource("SphereMesh_ak315")
