@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bjoytfgmv7oc0"]
+
+[ext_resource type="Script" uid="uid://bc38grcup74yh" path="res://basicMovement.gd" id="1_4flbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hwta1"]
+
+[node name="Node3D" type="CharacterBody3D" unique_id=1495693189 groups=["player"]]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=132151981]
+shape = SubResource("CapsuleShape3D_hwta1")
+
+[node name="Head" type="Node3D" parent="." unique_id=691515311]
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1383250766]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31093585, -0.15139091)
+
+[node name="Hand" type="Node3D" parent="." unique_id=816026263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53477114, 0, -0.31268573)

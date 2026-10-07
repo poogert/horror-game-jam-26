@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://cseq8smn0sld7"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ak315"]
-height = 3.825
+[ext_resource type="PackedScene" uid="uid://bjoytfgmv7oc0" path="res://player.tscn" id="1_u52ul"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_ak315"]
-radius = 1.0
-height = 2.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwta1"]
+size = Vector3(32.00154, 1, 32.102295)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hwta1"]
+size = Vector2(20, 20)
 
 [node name="Node3D" type="Node3D" unique_id=875277845]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1499070836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1498954, 0)
-mesh = SubResource("CapsuleMesh_ak315")
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=552144808]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=80101942]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.794856, -0.8668188, 0)
-mesh = SubResource("SphereMesh_ak315")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1215908441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014717102, -0.48619056, -0.0018310547)
+shape = SubResource("BoxShape3D_hwta1")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=410864589]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7846443, -0.8611309, 0)
-mesh = SubResource("SphereMesh_ak315")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1124525592]
+mesh = SubResource("PlaneMesh_hwta1")
+
+[node name="Node3D" parent="." unique_id=1495693189 instance=ExtResource("1_u52ul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4301453, 0)
