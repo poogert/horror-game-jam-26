@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cwk3ujg6clvdc"]
+
+[ext_resource type="Script" uid="uid://0d24std3fhtq" path="res://scripts/computer_game.gd" id="1_efs0u"]
+[ext_resource type="Texture2D" uid="uid://bdwjown04h0ix" path="res://textures/2203_green-color.png" id="2_vpubo"]
+
+[node name="computerGame" type="Node2D" unique_id=1396812980]
+script = ExtResource("1_efs0u")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=958156309]
+custom_maximum_size = Vector2(1929, 1080)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1198103430]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_vpubo")

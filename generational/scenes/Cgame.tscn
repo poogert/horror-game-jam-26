@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://728x4dd2goec"]
 
-[ext_resource type="Script" uid="uid://dy60u7620qh4b" path="res://taskScript.gd" id="1_opnd4"]
-[ext_resource type="PackedScene" uid="uid://cwk3ujg6clvdc" path="res://computer_game.tscn" id="2_uumg8"]
+[ext_resource type="Script" uid="uid://dy60u7620qh4b" path="res://scripts/taskScript.gd" id="1_xtwcs"]
+[ext_resource type="PackedScene" uid="uid://cwk3ujg6clvdc" path="res://scenes/computer_game.tscn" id="2_6dsf1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwta1"]
 
@@ -11,8 +11,11 @@ albedo_color = Color(0.9079687, 0.80572295, 0.023288738, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_hwta1"]
 material = SubResource("StandardMaterial3D_vonw3")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_3wuok"]
+viewport_path = NodePath("Node3D/SubViewport")
+
 [node name="computerGame" type="StaticBody3D" unique_id=290227162]
-script = ExtResource("1_opnd4")
+script = ExtResource("1_xtwcs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1550605513]
 shape = SubResource("BoxShape3D_hwta1")
@@ -25,5 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.837952)
 
 [node name="SubViewport" type="SubViewport" parent="Node3D" unique_id=932446449]
 transparent_bg = true
+size = Vector2i(1920, 1080)
 
-[node name="computerGame" parent="Node3D/SubViewport" unique_id=1396812980 instance=ExtResource("2_uumg8")]
+[node name="computerGame" parent="Node3D/SubViewport" unique_id=1396812980 instance=ExtResource("2_6dsf1")]
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D" unique_id=2010491041]
+transform = Transform3D(0.065, 0, 0, 0, 0.065, 0, 0, 0, 0.065, 0.01747626, 0.80005765, -0.8254342)
+texture = SubResource("ViewportTexture_3wuok")

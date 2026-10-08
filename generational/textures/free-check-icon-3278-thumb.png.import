@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdwjown04h0ix"
-path="res://.godot/imported/2203_green-color.png-daa668945a967985ba0a4c9c76ec4c39.ctex"
+uid="uid://0w21js21x2nb"
+path="res://.godot/imported/free-check-icon-3278-thumb.png-21c27c755b2ac781afa5be793537a436.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2203_green-color.png"
-dest_files=["res://.godot/imported/2203_green-color.png-daa668945a967985ba0a4c9c76ec4c39.ctex"]
+source_file="res://textures/free-check-icon-3278-thumb.png"
+dest_files=["res://.godot/imported/free-check-icon-3278-thumb.png-21c27c755b2ac781afa5be793537a436.ctex"]
 
 [params]
 
