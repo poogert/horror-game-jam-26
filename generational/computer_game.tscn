@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cwk3ujg6clvdc"]
+
+[ext_resource type="Script" uid="uid://0d24std3fhtq" path="res://computer_game.gd" id="1_rxtf6"]
+[ext_resource type="Texture2D" uid="uid://bdwjown04h0ix" path="res://2203_green-color.png" id="2_f1487"]
+
+[node name="computerGame" type="Node2D" unique_id=1396812980]
+script = ExtResource("1_rxtf6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=958156309]
+custom_maximum_size = Vector2(1929, 1080)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=476407742]
+layout_mode = 2
+theme_override_constants/margin_left = 73
+theme_override_constants/margin_top = 73
+theme_override_constants/margin_right = 73
+theme_override_constants/margin_bottom = 73
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1800039437]
+layout_mode = 2
+texture = ExtResource("2_f1487")
