@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://728x4dd2goec"]
+
+[ext_resource type="Script" uid="uid://dy60u7620qh4b" path="res://taskScript.gd" id="1_opnd4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwta1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vonw3"]
+albedo_color = Color(0.9079687, 0.80572295, 0.023288738, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwta1"]
+material = SubResource("StandardMaterial3D_vonw3")
+
+[node name="computerGame" type="StaticBody3D" unique_id=290227162]
+script = ExtResource("1_opnd4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1550605513]
+shape = SubResource("BoxShape3D_hwta1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1998742154]
+mesh = SubResource("BoxMesh_hwta1")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cseq8smn0sld7"]
 
 [ext_resource type="PackedScene" uid="uid://bjoytfgmv7oc0" path="res://player.tscn" id="1_u52ul"]
+[ext_resource type="PackedScene" uid="uid://728x4dd2goec" path="res://Cgame.tscn" id="2_vonw3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwta1"]
 size = Vector3(32.00154, 1, 32.102295)
@@ -11,6 +12,7 @@ size = Vector2(20, 20)
 [node name="Node3D" type="Node3D" unique_id=875277845]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=552144808]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1215908441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014717102, -0.48619056, -0.0018310547)
@@ -21,3 +23,6 @@ mesh = SubResource("PlaneMesh_hwta1")
 
 [node name="Node3D" parent="." unique_id=1495693189 instance=ExtResource("1_u52ul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4301453, 0)
+
+[node name="computerGame" parent="." unique_id=145424173 instance=ExtResource("2_vonw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27669334, 0.5138092, -3.636601)
