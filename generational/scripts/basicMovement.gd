@@ -52,6 +52,8 @@ func interact(task: int):
 	
 	if collider.has_method("gameStart"):
 		collider.gameStart(task)
+	elif collider.has_method("switchCamera"):
+		collider.switchCamera()
 	else:
-		print("nope")
+		pass
 	

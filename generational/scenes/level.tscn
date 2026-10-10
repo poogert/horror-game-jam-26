@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bjoytfgmv7oc0" path="res://scenes/player.tscn" id="1_u52ul"]
 [ext_resource type="PackedScene" uid="uid://728x4dd2goec" path="res://scenes/Cgame.tscn" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://bd6k3ugxddb5f" path="res://wires.tscn" id="3_w8frs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwta1"]
 size = Vector3(32.00154, 1, 32.102295)
@@ -26,3 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4301453, 0)
 
 [node name="computerGame" parent="." unique_id=145424173 instance=ExtResource("2_vonw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27669334, 0.5138092, -3.636601)
+
+[node name="Node3D2" parent="." unique_id=1049503760 instance=ExtResource("3_w8frs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5094104, 2.1528826, -1.6559844)
