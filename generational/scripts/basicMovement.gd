@@ -5,9 +5,10 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const sensitivity = 0.005
 
-@onready var head = $Head
-@onready var camera = $Head/Camera3D
-@onready var raycast = $Head/Camera3D/RayCast3D
+@export var head: Node3D
+@export var camera: Camera3D
+@export var raycast: RayCast3D
+#@export var camera_3d: Camera3D
 
 var collider
 var wireBeingHeld

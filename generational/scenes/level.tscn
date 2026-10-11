@@ -12,20 +12,20 @@ size = Vector2(20, 20)
 
 [node name="Node3D" type="Node3D" unique_id=875277845]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=552144808]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1065327137]
 collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1215908441]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1714225876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014717102, -0.48619056, -0.0018310547)
 shape = SubResource("BoxShape3D_hwta1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1124525592]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1071130203]
 mesh = SubResource("PlaneMesh_hwta1")
 
 [node name="Node3D" parent="." unique_id=1495693189 instance=ExtResource("1_u52ul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8947706, 4.0205593)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=140922277]
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2025265501]
 transform = Transform3D(1, 0, 0, 0, -0.0031288057, 0.9999951, 0, -0.9999951, -0.0031288057, 0, 16.91393, 0)
 spot_range = 24.512304
 
@@ -34,17 +34,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3274827, 2.0628438, -9.8594
 thisMustConnectTo = NodePath("../wireConnectors2")
 isStart = true
 
-[node name="wireConnectors2" parent="." unique_id=437117939 node_paths=PackedStringArray("thisMustConnectTo", "previousConnectedPiece") instance=ExtResource("2_w7c3h")]
+[node name="wireConnectors2" parent="." unique_id=688592534 node_paths=PackedStringArray("thisMustConnectTo", "previousConnectedPiece") instance=ExtResource("2_w7c3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0248709, 1.9564488, -10.0086)
 thisMustConnectTo = NodePath("../wireConnectors3")
 previousConnectedPiece = NodePath("../wireConnectors")
 
-[node name="wireConnectors3" parent="." unique_id=1882372691 node_paths=PackedStringArray("thisMustConnectTo", "previousConnectedPiece") instance=ExtResource("2_w7c3h")]
+[node name="wireConnectors3" parent="." unique_id=1982647227 node_paths=PackedStringArray("thisMustConnectTo", "previousConnectedPiece") instance=ExtResource("2_w7c3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9751291, 3.9358757, -10.0086)
 thisMustConnectTo = NodePath("../wireConnectors4")
 previousConnectedPiece = NodePath("../wireConnectors2")
 
-[node name="wireConnectors4" parent="." unique_id=1719352750 node_paths=PackedStringArray("previousConnectedPiece") instance=ExtResource("2_w7c3h")]
+[node name="wireConnectors4" parent="." unique_id=428571431 node_paths=PackedStringArray("previousConnectedPiece") instance=ExtResource("2_w7c3h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.920785, 5.7935534, -10.0086)
 previousConnectedPiece = NodePath("../wireConnectors3")
 isEnd = true

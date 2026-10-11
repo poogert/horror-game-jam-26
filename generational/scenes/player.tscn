@@ -1,25 +1,63 @@
 [gd_scene format=3 uid="uid://bjoytfgmv7oc0"]
 
 [ext_resource type="Script" uid="uid://bc38grcup74yh" path="res://scripts/basicMovement.gd" id="1_4flbx"]
+[ext_resource type="Shader" uid="uid://chau7nd0em5pa" path="res://scenes/dither.gdshader" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://b0620qpgoil0k" path="res://palette_hollow.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://c7jbwpjx6238c" path="res://bayer16tile2.png" id="3_qlg0r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
+shader = ExtResource("2_g2els")
+shader_parameter/u_dither_tex = ExtResource("3_qlg0r")
+shader_parameter/u_color_tex = ExtResource("3_dqkch")
+shader_parameter/u_bit_depth = 16
+shader_parameter/u_contrast = 1.0
+shader_parameter/u_offset = 0.0
+shader_parameter/u_dither_size = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hwta1"]
 
-[node name="Node3D" type="CharacterBody3D" unique_id=1495693189 groups=["player"]]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wv8iq"]
+height = 1.2255859
+
+[node name="Node3D" type="Node3D" unique_id=1073852416]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=405157615]
+material = SubResource("ShaderMaterial_qlg0r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=863788873]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Node3D" type="CharacterBody3D" parent="SubViewportContainer/SubViewport" unique_id=1495693189 node_paths=PackedStringArray("head", "camera", "raycast") groups=["player"]]
 collision_mask = 3
 script = ExtResource("1_4flbx")
+head = NodePath("Head")
+camera = NodePath("Head/Camera3D")
+raycast = NodePath("Head/Camera3D/RayCast3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=132151981]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=132151981]
 shape = SubResource("CapsuleShape3D_hwta1")
 
-[node name="Head" type="Node3D" parent="." unique_id=691515311]
+[node name="Hand" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=816026263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53477114, 0, -0.31268573)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1383250766]
+[node name="Head" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=691515311]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D/Head" unique_id=1383250766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31093585, -0.15139091)
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=145382367]
+[node name="RayCast3D" type="RayCast3D" parent="SubViewportContainer/SubViewport/Node3D/Head/Camera3D" unique_id=145382367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.051252007)
 target_position = Vector3(0, 0, -3)
 collision_mask = 3
 
-[node name="Hand" type="Node3D" parent="." unique_id=816026263]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53477114, 0, -0.31268573)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D" unique_id=576761963]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38720703, 0)
+mesh = SubResource("CapsuleMesh_wv8iq")
