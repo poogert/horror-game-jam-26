@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cseq8smn0sld7"]
 
 [ext_resource type="PackedScene" uid="uid://bjoytfgmv7oc0" path="res://scenes/player.tscn" id="1_u52ul"]
-[ext_resource type="PackedScene" uid="uid://728x4dd2goec" path="res://scenes/Cgame.tscn" id="2_vonw3"]
-[ext_resource type="PackedScene" uid="uid://bd6k3ugxddb5f" path="res://wires.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://c8418h6ptl0h3" path="res://scenes/wire_connectors.tscn" id="2_w7c3h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hwta1"]
 size = Vector3(32.00154, 1, 32.102295)
@@ -23,10 +22,14 @@ shape = SubResource("BoxShape3D_hwta1")
 mesh = SubResource("PlaneMesh_hwta1")
 
 [node name="Node3D" parent="." unique_id=1495693189 instance=ExtResource("1_u52ul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8947706, -1.8312768)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8947706, 4.0205593)
 
-[node name="computerGame" parent="." unique_id=145424173 instance=ExtResource("2_vonw3")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.27669334, 2.048547, -3.636601)
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=140922277]
+transform = Transform3D(1, 0, 0, 0, -0.0031288057, 0.9999951, 0, -0.9999951, -0.0031288057, 0, 16.91393, 0)
+spot_range = 24.512304
 
-[node name="Node3D2" parent="." unique_id=1049503760 instance=ExtResource("3_w8frs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.483535, 0.63584375, 1.9640288)
+[node name="wireConnectors" parent="." unique_id=1422545742 instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21281433, 2.0628438, -4.2146606)
+
+[node name="wireConnectors2" parent="." unique_id=437117939 instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.287448, 1.6159818, -4.1238112)

@@ -10,7 +10,7 @@ const sensitivity = 0.005
 @onready var raycast = $Head/Camera3D/RayCast3D
 
 var collider
-
+var wireBeingHeld
 func _ready() -> void:
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
