@@ -6,8 +6,8 @@ extends Node3D
 
 @onready var bottomNode: StaticBody3D = $Marker3D/bottom
 @onready var topHandler: AnimatableBody3D = $Marker3D/connecter
-@onready var wiresCamera: Camera3D = $Camera3D
 
+var camera
 var isBeingDragged: bool = false
 var dragArea: Plane
 var player: Node3D
@@ -17,6 +17,7 @@ func _ready() -> void:
 	ogPosition = topHandler.global_position
 	topHandler.input_event.connect(handleInput)
 	player = get_tree().get_first_node_in_group("player")
+	camera = player.camera
 	generateWireChain()
 
 func generateWireChain():
@@ -117,37 +118,32 @@ func generateWireChain():
 
 func handleInput(camera: Camera3D, event: InputEvent, position: Vector3, normal: Vector3, shapeIndex: int):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		var dragAreaNormal = wiresCamera.get_global_transform().basis.z
+		var dragAreaNormal = camera.get_global_transform().basis.z
 		dragArea = Plane(dragAreaNormal, topHandler.global_position)
 		isBeingDragged = true
 
 func _unhandled_input(event: InputEvent) -> void:
+	
 	var mousePosition = get_viewport().get_mouse_position()
-	var rayOrigin = wiresCamera.project_ray_origin(mousePosition)
-	var rayDirection = wiresCamera.project_ray_normal(mousePosition)
+	var rayOrigin = camera.project_ray_origin(mousePosition)
+	var rayDirection = camera.project_ray_normal(mousePosition)
 	var targetPosition = dragArea.intersects_ray(rayOrigin, rayDirection)
 	
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		isBeingDragged = false
+		
 		if connecterHoveringOver != null:
 			topHandler.global_position = connecterHoveringOver.global_position
-		isBeingDragged = false
-		topHandler.global_position = ogPosition
-		
+			ogPosition = topHandler.global_position 
+			player.wireBeingHeld = null
+		else:
+			topHandler.global_position = ogPosition
+			player.wireBeingHeld = null
 		
 	if event is InputEventMouseMotion and isBeingDragged:
-		
-		if not wiresCamera: return
+		if not camera: return
 	
 		if targetPosition != null:
 			topHandler.global_basis = Basis.IDENTITY
 			topHandler.global_position = targetPosition
 			player.wireBeingHeld = topHandler
-	
-	if event.is_action_pressed("exit") and player:
-		player.camera.make_current()
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-func switchCamera():
-	if player and player.camera.current == true:
-		wiresCamera.make_current()
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

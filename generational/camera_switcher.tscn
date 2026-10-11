@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b431pu8owrlsm"]
+
+[ext_resource type="Script" uid="uid://bh3iw8spn0cj8" path="res://camera_switcher.gd" id="1_uifgr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwta1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwta1"]
+
+[node name="cameraSwitcher" type="StaticBody3D" unique_id=37265451]
+script = ExtResource("1_uifgr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1822796662]
+shape = SubResource("BoxShape3D_hwta1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1455853376]
+mesh = SubResource("BoxMesh_hwta1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1722719020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9980247, 4.007569)
