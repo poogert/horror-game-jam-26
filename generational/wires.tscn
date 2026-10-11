@@ -2,22 +2,44 @@
 
 [ext_resource type="Script" uid="uid://d0tokhpecyws1" path="res://scripts/wires.gd" id="1_ptv7e"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_hwta1"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bhy47"]
+height = 0.10961914
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mx8sn"]
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="CylinderMesh" id="CylinderMesh_3wuok"]
+height = 0.091552734
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_hwta1"]
-material = SubResource("StandardMaterial3D_mx8sn")
+[sub_resource type="CylinderMesh" id="CylinderMesh_gw8pa"]
+height = 0.16516113
 
-[node name="Node3D" type="StaticBody3D" unique_id=1049503760]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8ayvk"]
+height = 0.20385742
+
+[node name="Node3D" type="Node3D" unique_id=953924409]
 script = ExtResource("1_ptv7e")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1487497578]
-shape = SubResource("CylinderShape3D_hwta1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=398140915]
-mesh = SubResource("CylinderMesh_hwta1")
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=95263359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9621582)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026184082, 1.438935, 2.9621582)
+current = true
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1054519898]
+
+[node name="bottom" type="StaticBody3D" parent="Marker3D" unique_id=1891505620]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Marker3D/bottom" unique_id=1867491388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04260254, 0)
+shape = SubResource("CylinderShape3D_bhy47")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3D/bottom" unique_id=2030032050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.045532227, 0)
+mesh = SubResource("CylinderMesh_3wuok")
+
+[node name="connecter" type="AnimatableBody3D" parent="Marker3D" unique_id=2041421473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1952846, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3D/connecter" unique_id=1054959820]
+mesh = SubResource("CylinderMesh_gw8pa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Marker3D/connecter" unique_id=1266825614]
+shape = SubResource("CylinderShape3D_8ayvk")

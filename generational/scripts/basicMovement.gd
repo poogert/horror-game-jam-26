@@ -14,6 +14,7 @@ var collider
 func _ready() -> void:
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	camera.make_current()
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		interact(1)
@@ -52,8 +53,10 @@ func interact(task: int):
 	
 	if collider.has_method("gameStart"):
 		collider.gameStart(task)
-	elif collider.has_method("switchCamera"):
-		collider.switchCamera()
+	elif collider.get_parent().get_parent().has_method("switchCamera"):
+		collider.get_parent().get_parent().switchCamera()
+		print(collider)
 	else:
+		print("didnt get there" + str(collider))
 		pass
 	

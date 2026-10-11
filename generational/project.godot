@@ -15,11 +15,6 @@ run/main_scene="uid://cseq8smn0sld7"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-
 [global_group]
 
 player=""
@@ -67,7 +62,9 @@ exit={
 
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
+3d/solver/solver_iterations=50
 
 [rendering]
 

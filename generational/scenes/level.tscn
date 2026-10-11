@@ -23,10 +23,10 @@ shape = SubResource("BoxShape3D_hwta1")
 mesh = SubResource("PlaneMesh_hwta1")
 
 [node name="Node3D" parent="." unique_id=1495693189 instance=ExtResource("1_u52ul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4301453, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8947706, -1.8312768)
 
 [node name="computerGame" parent="." unique_id=145424173 instance=ExtResource("2_vonw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27669334, 0.5138092, -3.636601)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -0.27669334, 2.048547, -3.636601)
 
 [node name="Node3D2" parent="." unique_id=1049503760 instance=ExtResource("3_w8frs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5094104, 2.1528826, -1.6559844)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.483535, 0.63584375, 1.9640288)
